@@ -22,7 +22,7 @@
 </head>
 <body>
     <h1>Privacy Policy di SnapSpesa</h1>
-    <p class="last-updated">Ultimo aggiornamento: 14 gennaio 2025</p>
+    <p class="last-updated">Ultimo aggiornamento: 9 febbraio 2026</p>
 
     <h2>1. Introduzione</h2>
     <p>Benvenuto in SnapSpesa. La presente Privacy Policy descrive come raccogliamo, utilizziamo e proteggiamo i tuoi dati personali quando utilizzi la nostra applicazione mobile per la gestione delle spese familiari.</p>
@@ -40,10 +40,11 @@
     <h3>3.1 Dati forniti dall'utente</h3>
     <ul>
         <li><strong>Dati di autenticazione:</strong> email, nome e foto profilo (tramite Google Sign-In)</li>
-        <li><strong>Dati finanziari:</strong> importi delle spese, budget, obiettivi di risparmio</li>
+        <li><strong>Dati finanziari:</strong> importi delle spese, budget mensili e settimanali, obiettivi di risparmio e contributi</li>
         <li><strong>Immagini:</strong> foto degli scontrini per la scansione OCR</li>
-        <li><strong>Dati familiari:</strong> nomi dei membri della famiglia (senza dati identificativi)</li>
-        <li><strong>Liste della spesa:</strong> prodotti e categorie</li>
+        <li><strong>Dati familiari:</strong> nomi dei membri della famiglia e tipo (adulto, bambino, animale domestico)</li>
+        <li><strong>Liste della spesa:</strong> prodotti, categorie e liste condivise con altri utenti</li>
+        <li><strong>Spese ricorrenti:</strong> abbonamenti, bollette e pagamenti periodici</li>
     </ul>
 
     <h3>3.2 Dati raccolti automaticamente</h3>
@@ -57,10 +58,13 @@
     <p>Utilizziamo i tuoi dati per:</p>
     <ul>
         <li>Fornire e migliorare i servizi dell'app</li>
-        <li>Sincronizzare i dati tra dispositivi</li>
-        <li>Inviare notifiche relative a budget e scadenze</li>
+        <li>Sincronizzare i dati tra dispositivi tramite cloud</li>
+        <li>Inviare notifiche relative a budget, scadenze e liste condivise</li>
         <li>Elaborare le immagini degli scontrini tramite OCR</li>
+        <li>Generare report e statistiche sulle spese (CSV/PDF)</li>
         <li>Mostrare annunci pubblicitari pertinenti (tramite Google AdMob)</li>
+        <li>Consentire la condivisione di liste della spesa con altri utenti</li>
+        <li>Suddividere le spese tra i membri della famiglia</li>
     </ul>
 
     <h2>5. Servizi di Terze Parti</h2>
@@ -69,9 +73,9 @@
     <h3>5.1 Firebase (Google)</h3>
     <ul>
         <li><strong>Firebase Authentication:</strong> per la gestione degli account utente</li>
-        <li><strong>Cloud Firestore:</strong> per la sincronizzazione dei dati nel cloud</li>
+        <li><strong>Cloud Firestore:</strong> per la sincronizzazione dei dati nel cloud e le liste condivise in tempo reale</li>
         <li><strong>Firebase Cloud Messaging:</strong> per le notifiche push</li>
-        <li><strong>Firebase Storage:</strong> per l'archiviazione delle immagini</li>
+        <li><strong>Firebase Storage:</strong> per l'archiviazione delle immagini degli scontrini</li>
     </ul>
     <p>Privacy Policy di Firebase: <a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a></p>
 
@@ -82,68 +86,56 @@
     <h3>5.3 Google ML Kit</h3>
     <p>Utilizziamo Google ML Kit per il riconoscimento ottico dei caratteri (OCR) sugli scontrini. L'elaborazione avviene localmente sul dispositivo.</p>
 
-    <h2>6. Conservazione dei Dati</h2>
+    <h3>5.4 Intelligenza Artificiale On-Device</h3>
+    <p>L'app offre un modello AI opzionale (Gemma 3) scaricabile da HuggingFace per migliorare il riconoscimento dei prodotti, suggerire categorie e assegnare membri della famiglia. L'elaborazione avviene interamente sul dispositivo e nessun dato viene inviato a server esterni per questa funzionalità.</p>
+
+    <h2>6. Liste Condivise</h2>
+    <p>La funzionalità di liste della spesa condivise utilizza Firebase Firestore per la sincronizzazione in tempo reale. Quando crei o partecipi a una lista condivisa:</p>
+    <ul>
+        <li>Il tuo nome e email sono visibili agli altri membri della lista</li>
+        <li>I prodotti che aggiungi sono visibili a tutti i membri</li>
+        <li>Il proprietario della lista può approvare o rifiutare richieste di adesione</li>
+    </ul>
+
+    <h2>7. Conservazione dei Dati</h2>
     <p>I tuoi dati vengono conservati:</p>
     <ul>
         <li><strong>Localmente:</strong> sul tuo dispositivo in un database SQLite</li>
-        <li><strong>Nel cloud:</strong> su Firebase Firestore, associati al tuo account</li>
+        <li><strong>Nel cloud:</strong> su Firebase Firestore e Firebase Storage, associati al tuo account</li>
     </ul>
     <p>I dati vengono conservati finché mantieni un account attivo. Puoi richiedere la cancellazione in qualsiasi momento.</p>
 
-    <h2>7. Sicurezza dei Dati</h2>
+    <h2>8. Sicurezza dei Dati</h2>
     <p>Adottiamo misure di sicurezza per proteggere i tuoi dati:</p>
     <ul>
         <li>Trasmissione crittografata (HTTPS/TLS)</li>
         <li>Autenticazione sicura tramite Firebase</li>
         <li>Accesso ai dati limitato all'utente autenticato</li>
+        <li>Regole di sicurezza Firestore per la protezione dei dati nel cloud</li>
     </ul>
 
-    <h2>8. I Tuoi Diritti (GDPR)</h2>
+    <h2>9. I Tuoi Diritti (GDPR)</h2>
     <p>In conformità al GDPR, hai diritto di:</p>
     <ul>
         <li><strong>Accesso:</strong> richiedere una copia dei tuoi dati</li>
         <li><strong>Rettifica:</strong> correggere dati inesatti</li>
         <li><strong>Cancellazione:</strong> richiedere l'eliminazione dei tuoi dati</li>
-        <li><strong>Portabilità:</strong> ricevere i tuoi dati in formato leggibile</li>
+        <li><strong>Portabilità:</strong> ricevere i tuoi dati in formato leggibile (esportazione CSV/PDF)</li>
         <li><strong>Opposizione:</strong> opporti al trattamento per finalità di marketing</li>
     </ul>
     <p>Per esercitare questi diritti, contattaci all'indirizzo email indicato sopra.</p>
 
-    <h2 id="elimina-account">9. Eliminazione Account e Dati</h2>
-<p>Puoi richiedere l'eliminazione completa del tuo account SnapSpesa e di tutti i dati associati.</p>
+    <h2>10. Eliminazione Account</h2>
+    <p>Puoi richiedere l'eliminazione del tuo account e di tutti i dati associati inviando un'email a <strong>totalaisolutions@gmail.com</strong> con oggetto "Richiesta eliminazione account SnapSpesa" indicando l'email Google associata al tuo account.</p>
+    <p>Verranno eliminati: dati utente, scontrini, budget, membri della famiglia, liste della spesa, spese ricorrenti, obiettivi di risparmio e immagini. L'elaborazione richiede fino a 30 giorni.</p>
 
-<h3>Come richiedere l'eliminazione</h3>
-<p>Invia un'email a <a href="mailto:totalaisolutions@gmail.com?subject=Richiesta%20eliminazione%20account%20SnapSpesa">totalaisolutions@gmail.com</a> con oggetto "Richiesta eliminazione account SnapSpesa" includendo:</p>
-<ul>
-    <li>L'indirizzo email associato al tuo account Google</li>
-    <li>Conferma della tua richiesta di eliminazione</li>
-</ul>
-
-<h3>Dati che verranno eliminati</h3>
-<ul>
-    <li>Account utente e dati di autenticazione</li>
-    <li>Tutti gli scontrini e le spese registrate</li>
-    <li>Budget e obiettivi di risparmio</li>
-    <li>Membri della famiglia</li>
-    <li>Liste della spesa</li>
-    <li>Spese ricorrenti</li>
-    <li>Immagini degli scontrini archiviate</li>
-</ul>
-
-<h3>Tempistiche</h3>
-<p>La tua richiesta verrà elaborata entro <strong>30 giorni</strong>. Riceverai una conferma via email al completamento dell'eliminazione.</p>
-
-<h3>Dati conservati</h3>
-<p>Potremmo conservare alcuni dati anonimi e aggregati per finalità statistiche, che non permettono di identificarti.</p>
-
-
-    <h2>10. Minori</h2>
+    <h2>11. Minori</h2>
     <p>SnapSpesa non è destinata a minori di 13 anni. Non raccogliamo consapevolmente dati personali di minori di 13 anni.</p>
 
-    <h2>11. Modifiche alla Privacy Policy</h2>
+    <h2>12. Modifiche alla Privacy Policy</h2>
     <p>Potremmo aggiornare questa Privacy Policy periodicamente. Ti informeremo di eventuali modifiche significative tramite l'app o altri mezzi appropriati.</p>
 
-    <h2>12. Contatti</h2>
+    <h2>13. Contatti</h2>
     <p>Per domande sulla presente Privacy Policy o sul trattamento dei tuoi dati, contattaci:</p>
     <ul>
         <li><strong>Email:</strong> totalaisolutions@gmail.com</li>
